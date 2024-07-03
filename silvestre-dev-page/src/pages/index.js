@@ -3,14 +3,24 @@ import { Container, Row, Col, Carousel } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000); // Simula um carregamento de 2 segundos
+
+    const handleScroll = () => {
+      const newOpacity = 1 - window.scrollY / 500;
+      setOpacity(newOpacity > 0 ? newOpacity : 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -26,22 +36,42 @@ const HomePage = () => {
       ) : (
         <Container>
           <Row className="my-5">
-            <Col className="text-center">
-              <h1 className={styles.mainHeading}>I'm Lucas Silvestre</h1>
-              <h2 className={styles.subHeading}>Full Stack Developer</h2>
+            <Col md={6} className="text-left">
+              <h1 className={styles.mainHeading}>Lucas Silvestre</h1>
+              <h2 className={styles.subHeading}>
+                Professional website and user interface
+              </h2>
               <p className={styles.paragraph}>
                 I am extremely curious and fascinated by learning new things. My
                 dive into new knowledge led me to learn programming and every
                 day I use the most current market technologies. I have always
-                been interested in IT project management, something embraced by
+                been interested in TI project management, something embraced by
                 my first degree in Law. The ability to communicate and solve
-                problems, in addition to a relentless quest for knowledge, make
-                me a unique professional in the workplace.
+                problems, in addition to a relentless quest for knowledge
               </p>
+              <div>
+                <Link href="/projects" passHref legacyBehavior>
+                  <a className={styles.link}>View Projects</a>
+                </Link>
+                {"  or    "}
+                <Link href="/about" passHref legacyBehavior>
+                  <a className={styles.link}>Read About Me</a>
+                </Link>
+              </div>
+            </Col>
+            <Col md={6} className="text-right">
+              <img
+                src="https://via.placeholder.com/800x400"
+                alt="Lucas Silvestre"
+                className={styles.profileImage}
+                style={{ opacity }}
+              />
             </Col>
           </Row>
 
           <Row>
+            <p> Selected Projects</p>
+            <h1>Web developer </h1>
             <Col>
               <Carousel>
                 <Carousel.Item>
@@ -94,7 +124,6 @@ const HomePage = () => {
               <ul className={styles.servicesList}>
                 <li>Web Development</li>
                 <li>Project Management</li>
-                <li>UI/UX Design</li>
                 <li>Backend Development</li>
               </ul>
             </Col>

@@ -1,40 +1,44 @@
 /* styles/Home.module.css */
 .skeletonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .mainHeading, .subHeading {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-  }
-  
-  .paragraph {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .carousel-item img {
-    height: 400px;
-    object-fit: cover;
-  }
-  
-  .servicesList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .servicesList li {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .servicesHeading {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.subHeading {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+.profileImage {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-out;
+}
+
+.servicesHeading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.servicesList {
+  font-size: 1.25rem;
+  list-style-type: none;
+  padding: 0;
+}
