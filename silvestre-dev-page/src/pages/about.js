@@ -3,6 +3,7 @@ import { Carousel, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/About.module.css";
 
+
 const About = () => {
   return (
     <div className={styles.about}>
@@ -105,6 +106,7 @@ const About = () => {
           </Col>
         </Row>
       </Container>
+   
     </div>
   );
 };
