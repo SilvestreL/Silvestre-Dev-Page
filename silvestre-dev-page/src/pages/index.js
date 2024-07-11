@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -61,7 +62,7 @@ const HomePage = () => {
             </Col>
             <Col md={6} className="text-right">
               <img
-                src="https://via.placeholder.com/800x400"
+                src="/lucas.jpg"
                 alt="Lucas Silvestre"
                 className={styles.profileImage}
                 style={{ opacity }}
@@ -122,9 +123,9 @@ const HomePage = () => {
             <Col>
               <h3 className={styles.servicesHeading}>My Services</h3>
               <ul className={styles.servicesList}>
-                <li>Web Development</li>
+                <li>FullStack Development</li>
                 <li>Project Management</li>
-                <li>Backend Development</li>
+                <li>System Analys</li>
               </ul>
             </Col>
           </Row>

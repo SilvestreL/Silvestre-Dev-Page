@@ -1,4 +1,3 @@
-/* styles/Navbar.module.css */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -94,7 +93,6 @@
   font-size: 1rem;
   color: #f3fbfcbe;
   font-weight: bold;
- 
 }
 
 .modalBody {
@@ -104,6 +102,20 @@
   flex-direction: column;
   flex: 1;
   transition: background-image 0.5s ease-in-out;
+  position: relative;
+}
+
+.bgContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5); /* Overlay color */
 }
 
 .modalFooter {
@@ -115,8 +127,8 @@
 
 .navLink {
   color: #999 !important;
-  font-size: 3rem;  /* Ajuste o tamanho da fonte */
-  font-weight: 600;   /* Fonte grossa */
+  font-size: 3rem;
+  font-weight: 600;
   margin-bottom: 1rem;
   cursor: pointer;
   text-align: center;
@@ -134,5 +146,26 @@
   position: absolute;
   left: -30px;
   color: white;
-  font-size: 3rem;  /* Ajuste o tamanho da fonte */
+  font-size: 3rem;
+}
+
+.cvLink {
+  color: #000;
+  font-weight: bold;
+  margin-left: 20px;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cvLink:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.cvLinkModal {
+  font-size: 2rem;
+  margin-top: 1rem;
 }

@@ -6,32 +6,41 @@ import styles from "../styles/Navbar.module.css";
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);
-  const [bgImage, setBgImage] = useState(null);
+  const [bgContent, setBgContent] = useState(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleMouseEnter = (image) => {
-    setBgImage(image);
+  const handleMouseEnter = (content) => {
+    setBgContent(content);
   };
 
   const handleMouseLeave = () => {
-    setBgImage(null);
+    setBgContent(null);
   };
 
   return (
     <>
-      <Navbar bg="light" className={`${styles.navbar}`}>
-        <Navbar.Brand className={styles.brandContainer}>
+      <Navbar bg="light" className={styles.navbar}>
+        <div className={styles.brandContainer}>
           <div className={styles.circle}>LS</div>
           <div>
             <Link href="/" passHref legacyBehavior>
-              <a className={styles.brandTextHome}>Lucas Silvestre</a>
+              <a className={styles.brandTextHome} onClick={handleClose}>
+                Lucas Silvestre
+              </a>
             </Link>
             <div className={styles.subtitle}>Full Stack Developer</div>
           </div>
-        </Navbar.Brand>
-        <Nav className="ml-auto">
+        </div>
+        <Nav className="ml-auto d-flex align-items-center">
+          <Nav.Link
+            href="/cv.pdf"
+            target="_blank"
+            className={styles.cvLink}
+          >
+            CV
+          </Nav.Link>
           <Nav.Link onClick={handleShow} className={styles.menuButton}>
             <motion.div
               className={styles.menuContainer}
@@ -66,7 +75,9 @@ const MyNavbar = () => {
                 <div className={styles.circle}>LS</div>
                 <div>
                   <Link href="/" passHref legacyBehavior>
-                    <a className={styles.brandText}>Lucas Silvestre</a>
+                    <a className={styles.brandText} onClick={handleClose}>
+                      Lucas Silvestre
+                    </a>
                   </Link>
                   <div className={styles.subtitle}>Full Stack Developer</div>
                 </div>
@@ -75,10 +86,8 @@ const MyNavbar = () => {
                 CLOSE
               </div>
             </div>
-            <div
-              className={styles.modalBody}
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
+            <div className={styles.modalBody}>
+              <div className={styles.bgContent}>{bgContent}</div>
               <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -89,7 +98,9 @@ const MyNavbar = () => {
                     <Nav.Link
                       onClick={handleClose}
                       onMouseEnter={() =>
-                        handleMouseEnter("/images/project.jpg")
+                        handleMouseEnter(
+                          <img src="/images/project.jpg" alt="Projects" />
+                        )
                       }
                       onMouseLeave={handleMouseLeave}
                       className={styles.navLink}
@@ -100,7 +111,11 @@ const MyNavbar = () => {
                   <Link href="/about" passHref legacyBehavior>
                     <Nav.Link
                       onClick={handleClose}
-                      onMouseEnter={() => handleMouseEnter("/images/about.jpg")}
+                      onMouseEnter={() =>
+                        handleMouseEnter(
+                          <img src="/images/about.jpg" alt="About me" />
+                        )
+                      }
                       onMouseLeave={handleMouseLeave}
                       className={styles.navLink}
                     >
@@ -111,7 +126,17 @@ const MyNavbar = () => {
                     <Nav.Link
                       onClick={handleClose}
                       onMouseEnter={() =>
-                        handleMouseEnter("/images/contact.jpg")
+                        handleMouseEnter(
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18709.56780647672!2d-35.73592654619894!3d-9.663763920258464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1720619333659!5m2!1spt-BR!2sbr"
+                            width="600"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          ></iframe>
+                        )
                       }
                       onMouseLeave={handleMouseLeave}
                       className={styles.navLink}
@@ -123,7 +148,9 @@ const MyNavbar = () => {
                     href="https://github.com/silvestrel"
                     target="_blank"
                     onMouseEnter={() =>
-                      handleMouseEnter("/images/dribbble.jpg")
+                      handleMouseEnter(
+                        <img src="/images/github.jpg" alt="Github" />
+                      )
                     }
                     onMouseLeave={handleMouseLeave}
                     className={styles.navLink}
@@ -134,12 +161,21 @@ const MyNavbar = () => {
                     href="https://instagram.com/lucassilvestrem"
                     target="_blank"
                     onMouseEnter={() =>
-                      handleMouseEnter("/images/instagram.jpg")
+                      handleMouseEnter(
+                        <img src="/images/instagram.jpg" alt="Instagram" />
+                      )
                     }
                     onMouseLeave={handleMouseLeave}
                     className={styles.navLink}
                   >
                     Instagram
+                  </Nav.Link>
+                  <Nav.Link
+                    href="/cv.pdf"
+                    target="_blank"
+                    className={`${styles.navLink} ${styles.cvLinkModal}`}
+                  >
+                    CV
                   </Nav.Link>
                 </Nav>
               </motion.div>
