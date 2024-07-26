@@ -1,112 +1,191 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/About.module.css";
 
-
 const About = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const carouselItems = [
+    {
+      src: "/images/treinamento1.jpg",
+      alt: "First Slide",
+      title: "Business",
+      description: "giving a business training session.",
+    },
+    {
+      src: "/images/cachoeira.jpg",
+      alt: "Second Slide",
+      title: "Waterfall",
+      description:
+        "enjoying a refreshing moment at the waterfall.",
+    },
+    {
+      src: "/images/american.jpg",
+      alt: "Third Slide",
+      title: "American Crime",
+      description: "at Atleta of American Crime event.",
+    },
+    {
+      src: "/images/futvolei.jpg",
+      alt: "Fourth Slide",
+      title: "Beach Soccer",
+      description:
+        "Participating in a futvolei tournament.",
+    },
+    {
+      src: "/images/jiu.jpg",
+      alt: "Fifth Slide",
+      title: "Jiu-Jitsu",
+      description: "Jiu-Jitsu competition.",
+    },
+    {
+      src: "/images/treinamento1.jpg",
+      alt: "Sixth Slide",
+      title: "Training",
+      description: " during a training session.",
+    },
+  ];
+
+  const handleSelect = (selectedIndex, e) => {
+    setActiveIndex(selectedIndex);
+  };
+
   return (
     <div className={styles.about}>
-      <Container className="text-center">
-        <Row className="justify-content-center mb-5">
-          <Col md={10}>
-            <h2 className={styles.heading}>A Few Words About Me</h2>
+      <Container className={styles.container}>
+        <Row className="mb-5">
+          <Col>
+            <h2 className={styles.few}>A Few Words About Me</h2>
             <h1 className={styles.title}>
-              I'm Lucas Silvestre, a Project Manager T.I and FullStack
-              Developer. I am extremely curious and fascinated by learning new
-              things. My communication skills, problem-solving abilities, and
-              relentless quest for knowledge make me a unique professional.
+              Hello, my name is Lucas Silvestre. An extremely curious person and
+              fascinated with learning new things. I like to add value to
+              people's lives with my technology skills. I believe that this
+              tireless search for knowledge makes me a unique professional.
             </h1>
             <p className={styles.description}>
               Over the last 3 years I have been training in the areas of project
-              management and full stack development...In my free time I like
-              photography and playing different sports.
+              management and full stack development. In my free time I like
+              photography and playing different sports. Lorem, ipsum dolor sit
+              amet consectetur adipisicing elit. Delectus voluptates consectetur
             </p>
           </Col>
         </Row>
-        <Row className="justify-content-center mb-5">
-          <Col md={10}>
-            <Carousel fade id="carouselExampleFade" className={styles.carousel}>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://via.placeholder.com/800x400?auto=yes&bg=777&fg=555&text=Primeiro+Slide"
-                  alt="Primeiro Slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://via.placeholder.com/800x400?auto=yes&bg=666&fg=444&text=Segundo+Slide"
-                  alt="Segundo Slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://via.placeholder.com/800x400?auto=yes&bg=555&fg=333&text=Terceiro+Slide"
-                  alt="Terceiro Slide"
-                />
-              </Carousel.Item>
+        <Row className="justify-content-left mb-5">
+          <Col md={8}>
+            <Carousel
+              className={styles.carousel}
+              activeIndex={activeIndex}
+              onSelect={handleSelect}
+            >
+              {carouselItems.map((item, index) => (
+                <Carousel.Item key={index}>
+                  <img
+                    className="d-block w-100"
+                    src={item.src}
+                    alt={item.alt}
+                  />
+                </Carousel.Item>
+              ))}
             </Carousel>
           </Col>
+          <Col md={4} className={styles.carouselText}>
+            <div className={styles.textContent}>
+              <h3>{carouselItems[activeIndex].title}</h3>
+              <p>{carouselItems[activeIndex].description}</p>
+            </div>
+          </Col>
         </Row>
-        <Row className={styles.services + " mb-5"}>
+        <Row className={styles.services}>
           <Col md={6}>
-            <h5> Services</h5>
-            <p>Product Manager / Full-Stack Developer / System Analyst</p>
+            <h5 className={styles.few}>Services</h5>
+            <p className={styles.titleTools}>
+              <span> Product Manager</span>
+              <span> / </span>
+              <span> Full-Stack Developer </span>
+              <span> / </span>
+              <span> System Analyst </span>
+            </p>
           </Col>
           <Col md={6}>
-            <h5>Tools I Use</h5>
-            <p>
-              JavaScript / Python / ReactJS / NodeJS / Bootstrap / NextJS /
-              Databases
+            <h5 className={styles.few}>Tools I Use</h5>
+            <p className={styles.titleTools}>
+              <span>JavaScript</span>
+              <span>/</span>
+              <span>Python</span>
+              <span>/</span>
+              <span>ReactJS</span>
+              <span>/</span>
+              <span>NodeJS</span>
+              <span>/</span>
+              <span>Bootstrap</span>
+              <span>/</span>
+              <span>NextJS</span>
+              <span>/</span>
+              <span>Databases</span>
             </p>
           </Col>
         </Row>
-        <h3 className={styles.faqTitle}>Usual Questions</h3>
+        <h3 className={styles.few2}>Usual Questions</h3>
         <Row className="mb-5">
           <Col md={6}>
             <details className={styles.details}>
-              <summary>Tecnical Courses</summary>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              libero, culpa ea laboriosam ullam iure qui ipsam rerum labore,
-              temporibus tenetur, quo sequi veritatis eos ad in odio magnam
-              exercitationem?
+              <summary className={styles.summary}>Academic Background</summary>
+              <ul className={styles["styled-list"]}>
+                <li>Information Systems (2023 - 2027) - Cesmac/AL</li>
+                <li>Law (2011 - 2016) - Unit/AL</li>
+                <li>
+                  Postgraduate in Administrative and Constitutional Law (2017 -
+                  2019)
+                </li>
+              </ul>
             </details>
           </Col>
           <Col md={6}>
             <details className={styles.details}>
-              <summary>Títulos Academicos</summary>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              voluptas, commodi repellendus placeat molestiae provident ullam
-              tenetur! Neque, perspiciatis mollitia? Quibusdam quasi voluptatum
-              alias, minus est atque dolorum illum eveniet!
+              <summary className={styles.summary}>Titles</summary>
+              <ul className={styles["styled-list"]}>
+                <li>
+                  Member of the Innovation and Legal Technology and Data
+                  Protection Commission
+                </li>
+              </ul>
             </details>
           </Col>
         </Row>
         <Row>
           <Col md={6}>
             <details className={styles.details}>
-              <summary>Work Experience</summary>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              libero, culpa ea laboriosam ullam iure qui ipsam rerum labore,
-              temporibus tenetur, quo sequi veritatis eos ad in odio magnam
-              exercitationem?
+              <summary className={styles.summary}>Work Experience</summary>
+              <ul className={styles["styled-list"]}>
+                <li>System Analyst / Project Manager T.I (2023 - 2024)</li>
+                <li>Full Stack Developer - Freelancer (2022 - 2024)</li>
+                <li>
+                  Technical Advisor for Special and Judicial Purchases (2020 -
+                  2023)
+                </li>
+                <li>Lawyer (2016 - 2024)</li>
+              </ul>
             </details>
           </Col>
           <Col md={6}>
             <details className={styles.details}>
-              <summary>Certifications</summary>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              voluptas, commodi repellendus placeat molestiae provident ullam
-              tenetur! Neque, perspiciatis mollitia? Quibusdam quasi voluptatum
-              alias, minus est atque dolorum illum eveniet!
+              <summary className={styles.summary}>Certifications</summary>
+              <ul className={styles["styled-list"]}>
+                <li>Agile Project Management with SCRUM</li>
+                <li>ITIL 4 Certification</li>
+                <li>HTML and CSS</li>
+                <li>Project Planning and Management</li>
+                <li>
+                  React from Basics to Advanced (with hooks, router, API,
+                  Projects)
+                </li>
+                <li>ITIL 4 / React / Docker / Project Manager</li>
+              </ul>
             </details>
           </Col>
         </Row>
       </Container>
-   
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simula um carregamento de 2 segundos
+    }, 2000);
 
     const handleScroll = () => {
       const newOpacity = 1 - window.scrollY / 500;
@@ -35,7 +35,9 @@ const HomePage = () => {
           <Skeleton height={50} width={`60%`} />
         </div>
       ) : (
-        <Container>
+        <Container className="mt-5 pt-5">
+          {" "}
+          {/* Adiciona margem superior e padding superior */}
           <Row className="my-5">
             <Col md={6} className="text-left">
               <h1 className={styles.mainHeading}>Lucas Silvestre</h1>
@@ -62,23 +64,22 @@ const HomePage = () => {
             </Col>
             <Col md={6} className="text-right">
               <img
-                src="/lucas.jpg"
+                src="/images/lucasSemFundo.jpg"
                 alt="Lucas Silvestre"
                 className={styles.profileImage}
                 style={{ opacity }}
               />
             </Col>
           </Row>
-
           <Row>
-            <p> Selected Projects</p>
-            <h1>Web developer </h1>
+            <p className={styles.mainHeading}> Selected Projects</p>
+            <h1 className={styles.subHeading}>Web developer </h1>
             <Col>
               <Carousel>
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
-                    src="https://via.placeholder.com/800x400"
+                    src="/images/marketplace.png"
                     alt="First slide"
                   />
                   <Carousel.Caption>
@@ -118,7 +119,6 @@ const HomePage = () => {
               </Carousel>
             </Col>
           </Row>
-
           <Row className="my-5">
             <Col>
               <h3 className={styles.servicesHeading}>My Services</h3>
