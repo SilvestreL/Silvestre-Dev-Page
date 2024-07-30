@@ -1,55 +1,55 @@
-import React, { useState } from "react";
-import { Carousel, Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/About.module.css";
 
 const About = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const carouselItems = [
+  const cards = [
     {
-      src: "/images/treinamento1.jpg",
-      alt: "First Slide",
-      title: "Business",
-      description: "giving a business training session.",
+      imgSrc: "/images/futvolei.jpg",
+      title: "Futvôlei",
+      text: "A competiçao e o resporte sempre estiveram presentes",
     },
     {
-      src: "/images/cachoeira.jpg",
-      alt: "Second Slide",
-      title: "Waterfall",
-      description:
-        "enjoying a refreshing moment at the waterfall.",
+      imgSrc: "/images/jiu.jpg",
+      title: "Jiu Jitsu",
+      text: "Esta arte marcial é onde o corpo cansa e a mente descansa.",
     },
     {
-      src: "/images/american.jpg",
-      alt: "Third Slide",
-      title: "American Crime",
-      description: "at Atleta of American Crime event.",
+      imgSrc: "/images/cachoeira.jpg",
+      title: "Viagens",
+      text: "Este é um card mais longo com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior.",
     },
     {
-      src: "/images/futvolei.jpg",
-      alt: "Fourth Slide",
-      title: "Beach Soccer",
-      description:
-        "Participating in a futvolei tournament.",
+      text: "“If there is a way to do it better, find it.”.",
+      footer: "- Thomas Edison",
     },
     {
-      src: "/images/jiu.jpg",
-      alt: "Fifth Slide",
-      title: "Jiu-Jitsu",
-      description: "Jiu-Jitsu competition.",
+      imgSrc: "",
+      title: "Título do card",
+      text: "Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.",
+      update: "Atualizados 3 minutos atrás",
     },
     {
-      src: "/images/treinamento1.jpg",
-      alt: "Sixth Slide",
-      title: "Training",
-      description: " during a training session.",
+      imgSrc: "/images/violao.jpg",
+      title: "Tocar Violão",
+      text: "Nas minhas horas livres, gosto de tocar violão. A música é uma grande paixão minha.",
+    },
+    {
+      text: "Se você quer ser bem sucedido, precisa ter dedicação total, buscar seu último limite e dar o melhor de si.",
+      footer: "- Ayrton Senna",
+    },
+    {
+      title: "Título do card",
+      text: "Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda maior que o primeiro, para mostrar a altura igual, em ação.",
+      update: "Atualizados 3 minutos atrás",
+    },
+    {
+      imgSrc: "/images/jogos.jpg",
+      title: "Jogos",
+      text: "Gosto de jogar videogames para relaxar e me divertir. É uma ótima forma de socializar com amigos.",
     },
   ];
-
-  const handleSelect = (selectedIndex, e) => {
-    setActiveIndex(selectedIndex);
-  };
 
   return (
     <div className={styles.about}>
@@ -71,33 +71,34 @@ const About = () => {
             </p>
           </Col>
         </Row>
-        <Row className="justify-content-left mb-5">
-          <Col md={8}>
-            <Carousel
-              className={styles.carousel}
-              activeIndex={activeIndex}
-              onSelect={handleSelect}
-            >
-              {carouselItems.map((item, index) => (
-                <Carousel.Item key={index}>
-                  <img
-                    className="d-block w-100"
-                    src={item.src}
-                    alt={item.alt}
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-          </Col>
-          <Col md={4} className={styles.carouselText}>
-            <div className={styles.textContent}>
-              <h3>{carouselItems[activeIndex].title}</h3>
-              <p>{carouselItems[activeIndex].description}</p>
-            </div>
-          </Col>
-        </Row>
+        <Container className="py-3">
+          <h1 className={`text-center mb-12 mt-12 ${styles.few}`}>50 shades of Sil</h1>
+          <Row>
+            {cards.map((card, index) => (
+              <Col xs={12} md={6} lg={4} key={index} className="mb-4">
+                <Card>
+                  {card.imgSrc && <Card.Img variant="top" src={card.imgSrc} />}
+                  <Card.Body>
+                    {card.title && <Card.Title>{card.title}</Card.Title>}
+                    <Card.Text>{card.text}</Card.Text>
+                    {card.update && (
+                      <Card.Text>
+                        <small className="text-muted">{card.update}</small>
+                      </Card.Text>
+                    )}
+                    {card.footer && (
+                      <footer className="blockquote-footer">
+                        <small className="text-muted">{card.footer}</small>
+                      </footer>
+                    )}
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
         <Row className={styles.services}>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <h5 className={styles.few}>Services</h5>
             <p className={styles.titleTools}>
               <span> Product Manager</span>
@@ -107,7 +108,7 @@ const About = () => {
               <span> System Analyst </span>
             </p>
           </Col>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <h5 className={styles.few}>Tools I Use</h5>
             <p className={styles.titleTools}>
               <span>JavaScript</span>
@@ -128,7 +129,7 @@ const About = () => {
         </Row>
         <h3 className={styles.few2}>Usual Questions</h3>
         <Row className="mb-5">
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <details className={styles.details}>
               <summary className={styles.summary}>Academic Background</summary>
               <ul className={styles["styled-list"]}>
@@ -141,7 +142,7 @@ const About = () => {
               </ul>
             </details>
           </Col>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <details className={styles.details}>
               <summary className={styles.summary}>Titles</summary>
               <ul className={styles["styled-list"]}>
@@ -154,7 +155,7 @@ const About = () => {
           </Col>
         </Row>
         <Row>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <details className={styles.details}>
               <summary className={styles.summary}>Work Experience</summary>
               <ul className={styles["styled-list"]}>
@@ -168,7 +169,7 @@ const About = () => {
               </ul>
             </details>
           </Col>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <details className={styles.details}>
               <summary className={styles.summary}>Certifications</summary>
               <ul className={styles["styled-list"]}>
