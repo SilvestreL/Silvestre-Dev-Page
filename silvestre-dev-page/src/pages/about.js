@@ -16,6 +16,7 @@ const About = () => {
       text: "Onde o corpo cansa e a mente descansa.",
     },
     {
+      imgSrc: "/images/palestra3.jpg",
       title: "Work",
       text: "Frase sobre trabalho",
     },
