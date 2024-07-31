@@ -34,12 +34,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/projects/clinica-medica" passHref legacyBehavior>
-                  <a className={styles.projectLink}>Clinica Medica</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects/concessionaria" passHref legacyBehavior>
-                  <a className={styles.projectLink}>Consessionária</a>
+                  <a className={styles.projectLink}vp>Clinica Medica</a>
                 </Link>
               </li>
               <li>
