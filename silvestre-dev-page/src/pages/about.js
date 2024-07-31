@@ -61,7 +61,7 @@ const About = () => {
           </Col>
         </Row>
         <Container className="py-3">
-          <h1 className={`text-center mb-5 ${styles.few}`}>50 shades of Sil</h1>
+          <h1 className={`text-center mb-5 ${styles.few}`}>50 shades of </h1>
           <Row>
             {cards.slice(0, 3).map((card, index) => (
               <Col xs={12} md={4} key={index} className="mb-4">
@@ -100,7 +100,7 @@ const About = () => {
                 <Card.Body className={styles.cardBody}>
                   <Card.Text>{cards[3].text}</Card.Text>
                   {cards[3].footer && (
-                    <footer className="blockquote-footer">
+                    <footer className="blockquote-footer"> <br />
                       <small className="text-muted">{cards[3].footer}</small>
                     </footer>
                   )}
@@ -110,7 +110,7 @@ const About = () => {
                 <Card.Body className={styles.cardBody}>
                   <Card.Text>{cards[4].text}</Card.Text>
                   {cards[4].footer && (
-                    <footer className="blockquote-footer">
+                    <footer className="blockquote-footer"> <br></br>
                       <small className="text-muted">{cards[4].footer}</small>
                     </footer>
                   )}

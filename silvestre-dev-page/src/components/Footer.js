@@ -47,11 +47,6 @@ const Footer = () => {
                   <a className={styles.projectLink}>Kanban Board</a>
                 </Link>
               </li>
-              <li>
-                <Link href="/projects/secret-word" passHref legacyBehavior>
-                  <a className={styles.projectLink}>SecrectWord</a>
-                </Link>
-              </li>
             </ul>
           </Col>
           <Col md={3}>
