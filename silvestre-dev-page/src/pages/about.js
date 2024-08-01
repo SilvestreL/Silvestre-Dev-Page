@@ -7,36 +7,36 @@ const About = () => {
   const cards = [
     {
       imgSrc: "/images/futvolei.jpg",
-      title: "Futvôlei",
-      text: "A competiçao e o resporte sempre estiveram presentes",
+      title: "Footvolley",
+      text: "Competition and sport have always been present.",
     },
     {
       imgSrc: "/images/jiu.jpg",
       title: "Jiu Jitsu",
-      text: "Onde o corpo cansa e a mente descansa.",
+      text: "Where the body tires and the mind rests.",
     },
     {
       imgSrc: "/images/palestra3.jpg",
       title: "Work",
-      text: "Frase sobre trabalho",
+      text: "Obsession beats talent.",
     },
     {
-      text: "“If there is a way to do it better, find it.”",
-      footer: "- Thomas Edison",
+      text: "“I always try to surpass myself. I've always been like this.”",
+      footer: "- Lionel Messi",
     },
     {
-      text: "Se você quer ser bem sucedido, precisa ter dedicação total, buscar seu último limite e dar o melhor de si.",
+      text: "If you want to be successful, you need total dedication, seek your ultimate limit and give your best.",
       footer: "- Ayrton Senna",
     },
     {
       imgSrc: "/images/pc2.jpg",
-      title: "Tocar Violão",
-      text: "Nas minhas horas livres, gosto de tocar violão. A música é uma grande paixão minha.",
+      title: "Technologic",
+      text: " “If there is a way to do it better, find it.” - Thomas Edison",
     },
     {
-      imgSrc: "/images/pc2.jpg",
-      title: "Jogos",
-      text: "Gosto de jogar videogames para relaxar e me divertir. É uma ótima forma de socializar com amigos.",
+      imgSrc: "/images/disney.jpg",
+      title: "Trips",
+      text: "With each new trip, we return home with new sparks in our eyes.",
     },
   ];
 
@@ -61,7 +61,7 @@ const About = () => {
           </Col>
         </Row>
         <Container className="py-3">
-          <h1 className={`text-center mb-5 ${styles.few}`}>50 shades of </h1>
+          <h1 className={`text-center mb-5 ${styles.few}`}>50 shades of</h1>
           <Row>
             {cards.slice(0, 3).map((card, index) => (
               <Col xs={12} md={4} key={index} className="mb-4">
@@ -100,7 +100,8 @@ const About = () => {
                 <Card.Body className={styles.cardBody}>
                   <Card.Text>{cards[3].text}</Card.Text>
                   {cards[3].footer && (
-                    <footer className="blockquote-footer"> <br />
+                    <footer className="blockquote-footer">
+                      <br />
                       <small className="text-muted">{cards[3].footer}</small>
                     </footer>
                   )}
@@ -110,7 +111,8 @@ const About = () => {
                 <Card.Body className={styles.cardBody}>
                   <Card.Text>{cards[4].text}</Card.Text>
                   {cards[4].footer && (
-                    <footer className="blockquote-footer"> <br></br>
+                    <footer className="blockquote-footer">
+                      <br />
                       <small className="text-muted">{cards[4].footer}</small>
                     </footer>
                   )}

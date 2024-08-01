@@ -5,10 +5,13 @@ import "react-loading-skeleton/dist/skeleton.css";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [opacity, setOpacity] = useState(1);
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,6 +26,25 @@ const HomePage = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const services = [
+    "FullStack Development",
+    "Project Management",
+    "System Analysist",
+  ];
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.5,
+        type: "spring",
+        stiffness: 50,
+      },
+    }),
+  };
 
   return (
     <div>
@@ -54,7 +76,7 @@ const HomePage = () => {
                 <Link href="/projects" passHref legacyBehavior>
                   <a className={styles.link}>View Projects</a>
                 </Link>
-                {"  or    "}
+                {" or "}
                 <Link href="/about" passHref legacyBehavior>
                   <a className={styles.link}>Read About Me</a>
                 </Link>
@@ -75,29 +97,45 @@ const HomePage = () => {
           </Row>
           <Row>
             <Col md={6}>
-              <Card className={styles.cardSmall}>
-                <Card.Img variant="top" src="/images/markeplacecard.jpg" />
-                <Card.Body>
-                  
-                </Card.Body>
-              </Card>
+              <Link href="/projects/marketplace" passHref legacyBehav>
+                <Card className={styles.cardSmall}>
+                  <Card.Img variant="top" src="/images/markeplacecard.jpg" />
+                  <Card.Body></Card.Body>
+                </Card>
+              </Link>
             </Col>
             <Col md={6}>
-              <Card className={styles.cardSmall}>
-                <Card.Img variant="top" src="/images/kanban3.jpg" />
-                <Card.Body>
-                </Card.Body>
-              </Card>
+              <Link href="/projects/kanban" passHref legacyBehav>
+                <Card className={styles.cardSmall}>
+                  <Card.Img variant="top" src="/images/kanban3.jpg" />
+                  <Card.Body></Card.Body>
+                </Card>
+              </Link>
             </Col>
           </Row>
           <Row className="my-5">
             <Col>
-              <h3 className={styles.servicesHeading}>My Services</h3>
-              <ul className={styles.servicesList}>
-                <li>FullStack Development</li>
-                <li>Project Management</li>
-                <li>System Analys</li>
-              </ul>
+              <h2 className={styles.subHeading}>My Services</h2>
+              <Row ref={ref}>
+                {services.map((service, index) => (
+                  <Col
+                    key={index}
+                    xs={12}
+                    md={4}
+                    className="d-flex justify-content-center"
+                  >
+                    <motion.div
+                      custom={index}
+                      initial="hidden"
+                      animate={inView ? "visible" : "hidden"}
+                      variants={variants}
+                      className={styles.serviceItem}
+                    >
+                      {service}
+                    </motion.div>
+                  </Col>
+                ))}
+              </Row>
             </Col>
           </Row>
         </Container>
