@@ -102,9 +102,9 @@ const MyNavbar = () => {
                       onMouseEnter={() =>
                         handleMouseEnter(
                           <img
-                            src="/images/palestra.jpg"
+                            src="/images/pcdev.jpg"
                             alt="Projects"
-                            width="40%"
+                            width="100%"
                             height="100%"
                           />
                         )
@@ -123,7 +123,7 @@ const MyNavbar = () => {
                           <img
                             src="/images/lucas.jpg"
                             alt="About"
-                            width="50%"
+                            width="100%"
                             height="100%"
                           />
                         )
