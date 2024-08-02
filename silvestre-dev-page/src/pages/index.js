@@ -7,6 +7,8 @@ import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import AnimatedCircle from "../components/AnimatedCircle"; 
+import ScrollToTopCircle from "../components/ScrollToTopCircle";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -107,7 +109,7 @@ const HomePage = () => {
             <Col md={6}>
               <Link href="/projects/kanban" passHref legacyBehav>
                 <Card className={styles.cardSmall}>
-                  <Card.Img variant="top" src="/images/kanban3.jpg" />
+                  <Card.Img variant="top" src="/images/kanban2.jpg" />
                   <Card.Body></Card.Body>
                 </Card>
               </Link>
@@ -138,6 +140,8 @@ const HomePage = () => {
               </Row>
             </Col>
           </Row>
+          <AnimatedCircle /> 
+          <ScrollToTopCircle />
         </Container>
       )}
     </div>

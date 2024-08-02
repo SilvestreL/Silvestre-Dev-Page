@@ -95,7 +95,10 @@ const MyNavbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Nav className="flex-column text-center">
+                <div className={styles.menuTitle}>MENU</div>
+                <Nav
+                  className={`flex-column text-center ${styles.navLinksContainer}`}
+                >
                   <Link href="/projects" passHref legacyBehavior>
                     <Nav.Link
                       onClick={handleClose}
@@ -161,7 +164,7 @@ const MyNavbar = () => {
                         <img
                           src="/images/github2.jpg"
                           alt="GitHub"
-                          width="1000%"
+                          width="100%"
                           height="100%"
                         />
                       )
@@ -178,7 +181,7 @@ const MyNavbar = () => {
                       handleMouseEnter(
                         <img
                           src="/images/instagram2.jpg"
-                          alt="GitHub"
+                          alt="Instagram"
                           width="100%"
                           height="100%"
                         />
@@ -200,7 +203,7 @@ const MyNavbar = () => {
               </motion.div>
             </div>
             <div className={styles.modalFooter}>
-              © 2024 Lucas Silvestre. Made with ❤️ in Maceió, Brasil.
+              
             </div>
           </motion.div>
         )}

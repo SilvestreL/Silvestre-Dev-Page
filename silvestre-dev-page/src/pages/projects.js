@@ -7,13 +7,13 @@ import styles from "../styles/Projects.module.css";
 const projects = [
   {
     href: "/projects/kanban",
-    imgSrc: "/images/kanban3.jpg",
+    imgSrc: "/images/kanban2.jpg",
     imgAlt: "Kanban Board",
     text: "Kanban Board",
   },
   {
     href: "/projects/kanban",
-    imgSrc: "/images/kanban3.jpg",
+    imgSrc: "/images/clinicamedica.jpg",
     imgAlt: "Clinica Médica",
     text: "Clinica Médica",
   },
@@ -23,7 +23,7 @@ const projects = [
     imgAlt: "Marketplace Project",
     text: "Marketplace Project",
   },
-  // Adicione mais projetos conforme necessário
+
 ];
 
 const Projects = () => {
