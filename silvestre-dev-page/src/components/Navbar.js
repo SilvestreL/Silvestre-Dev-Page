@@ -142,8 +142,8 @@ const MyNavbar = () => {
                           <img
                             src="/images/pc2.jpg"
                             alt="Contact-me"
-                            width="50%"
-                            height="50%"
+                            width="100%"
+                            height="100%"
                           />
                         )
                       }
@@ -161,8 +161,8 @@ const MyNavbar = () => {
                         <img
                           src="/images/github2.jpg"
                           alt="GitHub"
-                          width="80%"
-                          height="80%"
+                          width="1000%"
+                          height="100%"
                         />
                       )
                     }
@@ -179,8 +179,8 @@ const MyNavbar = () => {
                         <img
                           src="/images/instagram2.jpg"
                           alt="GitHub"
-                          width="60%"
-                          height="110%"
+                          width="100%"
+                          height="100%"
                         />
                       )
                     }

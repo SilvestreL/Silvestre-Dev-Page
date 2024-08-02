@@ -33,7 +33,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/projects/clinica-medica" passHref legacyBehavior>
+                <Link href="/projects/clinicamedica" passHref legacyBehavior>
                   <a className={styles.projectLink}vp>Clinica Medica</a>
                 </Link>
               </li>
