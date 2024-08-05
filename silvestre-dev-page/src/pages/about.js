@@ -53,10 +53,15 @@ const About = () => {
               tireless search for knowledge makes me a unique professional.
             </h1>
             <p className={styles.description}>
-              Over the last 3 years I have been training in the areas of project
-              management and full stack development. In my free time I like
-              photography and playing different sports. Lorem, ipsum dolor sit
-              amet consectetur adipisicing elit. Delectus voluptates consectetur
+              Over the last 3 years, I have been training in the areas of
+              project management and full stack development. In my free time, I
+              like photography and playing different sports. Additionally, I
+              have been actively involved in various personal projects to
+              sharpen my skills and stay updated with the latest trends in
+              technology. My dedication to continuous learning has earned me
+              several certifications, reflecting my commitment to professional
+              growth. Balancing my technical pursuits with personal interests
+              allows me to maintain a well-rounded and fulfilling lifestyle.
             </p>
           </Col>
         </Row>
@@ -134,7 +139,7 @@ const About = () => {
             </Col>
           </Row>
         </Container>
-        <div className={styles.separator}></div> {/* Separator Line */}
+        <div className={styles.separator}></div>
         <Container className={styles.container}>
           <Row className={styles.services}>
             <Col md={6}>
