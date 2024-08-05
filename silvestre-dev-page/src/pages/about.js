@@ -83,11 +83,11 @@ const About = () => {
           </Row>
           <Row>
             <Col xs={12} md={4} className="mb-4">
-              <Card className={`${styles.polaroid} ${styles.textAboveImage}`}>
+              <Card className={styles.polaroid}>
                 <Card.Img
                   variant="top"
                   src={cards[5].imgSrc}
-                  className={styles.cardImgBottomRow}
+                  className={styles.cardImg}
                 />
                 <Card.Body>
                   {cards[5].title && <Card.Title>{cards[5].title}</Card.Title>}
@@ -120,17 +120,111 @@ const About = () => {
               </Card>
             </Col>
             <Col xs={12} md={4} className="mb-4">
-              <Card className={`${styles.polaroid} ${styles.textAboveImage}`}>
+              <Card className={styles.polaroid}>
                 <Card.Img
                   variant="top"
                   src={cards[6].imgSrc}
-                  className={styles.cardImgBottomRow}
+                  className={styles.cardImg}
                 />
                 <Card.Body>
                   {cards[6].title && <Card.Title>{cards[6].title}</Card.Title>}
                   <Card.Text>{cards[6].text}</Card.Text>
                 </Card.Body>
               </Card>
+            </Col>
+          </Row>
+        </Container>
+        <div className={styles.separator}></div> {/* Separator Line */}
+        <Container className={styles.container}>
+          <Row className={styles.services}>
+            <Col md={6}>
+              <h5 className={styles.few}>Services</h5>
+              <p className={styles.titleTools}>
+                <span> Product Manager</span>
+                <span> / </span>
+                <span> Full-Stack Developer </span>
+                <span> / </span>
+                <span> System Analyst </span>
+              </p>
+            </Col>
+            <Col md={6}>
+              <h5 className={styles.few}>Tools I Use</h5>
+              <p className={styles.titleTools}>
+                <span>JavaScript</span>
+                <span>/</span>
+                <span>Python</span>
+                <span>/</span>
+                <span>ReactJS</span>
+                <span>/</span>
+                <span>NodeJS</span>
+                <span>/</span>
+                <span>Bootstrap</span>
+                <span>/</span>
+                <span>NextJS</span>
+                <span>/</span>
+                <span>Databases</span>
+              </p>
+            </Col>
+          </Row>
+          <h3 className={styles.few2}>Usual Questions</h3>
+          <Row className="mb-5">
+            <Col md={6}>
+              <details className={styles.details}>
+                <summary className={styles.summary}>
+                  Academic Background
+                </summary>
+                <ul className={styles["styled-list"]}>
+                  <li>Information Systems (2023 - 2027) - Cesmac/AL</li>
+                  <li>Law (2011 - 2016) - Unit/AL</li>
+                  <li>
+                    Postgraduate in Administrative and Constitutional Law (2017
+                    - 2019)
+                  </li>
+                </ul>
+              </details>
+            </Col>
+            <Col md={6}>
+              <details className={styles.details}>
+                <summary className={styles.summary}>Titles</summary>
+                <ul className={styles["styled-list"]}>
+                  <li>
+                    Member of the Innovation and Legal Technology and Data
+                    Protection Commission
+                  </li>
+                </ul>
+              </details>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <details className={styles.details}>
+                <summary className={styles.summary}>Work Experience</summary>
+                <ul className={styles["styled-list"]}>
+                  <li>System Analyst / Project Manager T.I (2023 - 2024)</li>
+                  <li>Full Stack Developer - Freelancer (2022 - 2024)</li>
+                  <li>
+                    Technical Advisor for Special and Judicial Purchases (2020 -
+                    2023)
+                  </li>
+                  <li>Lawyer (2016 - 2024)</li>
+                </ul>
+              </details>
+            </Col>
+            <Col md={6}>
+              <details className={styles.details}>
+                <summary className={styles.summary}>Certifications</summary>
+                <ul className={styles["styled-list"]}>
+                  <li>Agile Project Management with SCRUM</li>
+                  <li>ITIL 4 Certification</li>
+                  <li>HTML and CSS</li>
+                  <li>Project Planning and Management</li>
+                  <li>
+                    React from Basics to Advanced (with hooks, router, API,
+                    Projects)
+                  </li>
+                  <li>ITIL 4 / React / Docker / Project Manager</li>
+                </ul>
+              </details>
             </Col>
           </Row>
         </Container>
