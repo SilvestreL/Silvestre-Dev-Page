@@ -52,7 +52,7 @@ silvestre-dev-page/
 ├── postcss.config.js
 ├── README.md
 └── tailwind.config.js
-
+````
 ## How to Run the Project
 To run the project locally, follow these steps:
 
