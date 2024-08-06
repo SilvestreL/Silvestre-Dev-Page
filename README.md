@@ -22,23 +22,35 @@ DevPage is a professional website project showcasing information about Lucas Sil
 - **Custom Components:** `AnimatedCircle`, `ScrollToTopCircle`, and `WelcomeScreen`.
 
 ## Project Structure
-├── components
-│ ├── AnimatedCircle.js
-│ ├── ScrollToTopCircle.js
-│ └── WelcomeScreen.js
-├── pages
-│ ├── index.js
-│ ├── projects
-│ └── about
-├── public
-│ ├── images
-│ │ ├── lucasSemFundo.jpg
-│ │ ├── marketplacecard.jpg
-│ │ └── kanban2.jpg
-├── styles
-│ ├── Home.module.css
+silvestre-dev-page/
+├── .next/
+├── node_modules/
+├── public/
+│ ├── icons/
+│ ├── images/
+│ ├── video/
+│ └── cv.pdf
+├── src/
+│ ├── app/
+│ ├── components/
+│ ├── pages/
+│ │ ├── api/
+│ │ ├── projects/
+│ │ │ ├── _app.js
+│ │ │ ├── about.js
+│ │ │ ├── contact.js
+│ │ │ ├── index.js
+│ │ │ └── projects.js
+│ ├── styles/
+├── .gitignore
+├── .gitattributes
+├── jsconfig.json
+├── next.config.mjs
+├── package-lock.json
 ├── package.json
-└── README.md
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
 
 ## How to Run the Project
 To run the project locally, follow these steps:
