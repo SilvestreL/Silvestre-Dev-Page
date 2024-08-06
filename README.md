@@ -83,4 +83,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Contact
 For more information, contact:
 - **Email:** lucassilvestreadv@gmail.com    
-- **LinkedIn:** [linkedin.com/in/lucas-silvestre](https://www.linkedin.com/in/lucassilvestreee/)
+- **LinkedIn:** [linkedin.com/in/lucassilvestreee](https://www.linkedin.com/in/lucassilvestreee/)
