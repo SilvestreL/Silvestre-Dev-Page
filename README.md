@@ -20,28 +20,29 @@ DevPage is a professional website project showcasing information about Lucas Sil
 - **Framer Motion:** Library for animations in React.
 - **React Intersection Observer:** Hook for detecting when a component is in the viewport.
 - **Custom Components:** `AnimatedCircle`, `ScrollToTopCircle`, and `WelcomeScreen`.
-
+- 
 ## Project Structure
+```plaintext
 silvestre-dev-page/
 ├── .next/
 ├── node_modules/
 ├── public/
-│ ├── icons/
-│ ├── images/
-│ ├── video/
-│ └── cv.pdf
+│   ├── icons/
+│   ├── images/
+│   ├── video/
+│   └── cv.pdf
 ├── src/
-│ ├── app/
-│ ├── components/
-│ ├── pages/
-│ │ ├── api/
-│ │ ├── projects/
-│ │ │ ├── _app.js
-│ │ │ ├── about.js
-│ │ │ ├── contact.js
-│ │ │ ├── index.js
-│ │ │ └── projects.js
-│ ├── styles/
+│   ├── app/
+│   ├── components/
+│   ├── pages/
+│   │   ├── api/
+│   │   ├── projects/
+│   │   │   ├── _app.js
+│   │   │   ├── about.js
+│   │   │   ├── contact.js
+│   │   │   ├── index.js
+│   │   │   └── projects.js
+│   ├── styles/
 ├── .gitignore
 ├── .gitattributes
 ├── jsconfig.json
