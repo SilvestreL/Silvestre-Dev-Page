@@ -20,7 +20,7 @@ DevPage is a professional website project showcasing information about Lucas Sil
 - **Framer Motion:** Library for animations in React.
 - **React Intersection Observer:** Hook for detecting when a component is in the viewport.
 - **Custom Components:** `AnimatedCircle`, `ScrollToTopCircle`, and `WelcomeScreen`.
-- 
+  
 ## Project Structure
 ```plaintext
 silvestre-dev-page/
@@ -53,12 +53,12 @@ silvestre-dev-page/
 ├── README.md
 └── tailwind.config.js
 ````
-## How to Run the Project
-To run the project locally, follow these steps:
 
 ## Inspiration
 This project was inspired by the UX design of [Damian Watracz](https://www.linkedin.com/in/damianwatracz/).
 
+## How to Run the Project
+To run the project locally, follow these steps:
 
 1. **Clone the repository:**
     ```sh
