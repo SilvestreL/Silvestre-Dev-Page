@@ -25,7 +25,7 @@
   
   .mainText {
 
-    font-size: 3.875rem; /* Tamanho grande do texto principal */
+    font-size: 3rem; /* Tamanho grande do texto principal */
     color: #0a0a14; /* Cor preta */
     font-weight: 800; /* Peso da fonte para negrito */
     display: flex;

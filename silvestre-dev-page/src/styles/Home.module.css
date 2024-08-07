@@ -181,3 +181,13 @@
 .viewMore span {
   margin-right: 5px;
 }
+.subHeading2{
+  font-weight: 800; /* Define o peso da fonte */
+  letter-spacing: -.01em; /* Define o espaçamento entre letras */
+  color: #0f141e; /* Define a cor do texto */
+  font-size: 3rem; /* Define o tamanho da fonte */
+  line-height: 4.0625rem; /* Define a altura da linha */
+  padding-top: 5px; /* Adiciona preenchimento superior */
+  padding-bottom: 5px; /* Adiciona preenchimento inferior */
+  margin-bottom: 1rem; /* Adiciona margem inferior */
+}

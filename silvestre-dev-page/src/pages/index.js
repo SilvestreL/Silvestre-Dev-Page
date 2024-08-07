@@ -119,7 +119,7 @@ const HomePage = () => {
             </Row>
             <Row>
               <p className={styles.mainHeading}>Selected Projects</p>
-              <h1 className={styles.subHeading}>Web developer</h1>
+              <h1 className={styles.subHeading2}>Web developer</h1>
             </Row>
             <Row>
               <Col md={6}>
@@ -172,7 +172,7 @@ const HomePage = () => {
             </Row>
             <Row className="my-5">
               <Col>
-                <h2 className={styles.subHeading}>My Services</h2>
+                <h2 className={styles.subHeading2}>My Services</h2>
                 <Row ref={ref}>
                   {services.map((service, index) => (
                     <Col
