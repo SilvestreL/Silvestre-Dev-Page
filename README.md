@@ -3,6 +3,14 @@
 ## Overview
 DevPage is a professional website project showcasing information about Lucas Silvestre, including his services, selected projects, and personal details. This project was developed to demonstrate skills in web development using modern technologies.
 
+## Project Images
+![DevPage Screenshot 1](public/images/apresentacao.png)
+![DevPage Screenshot 2](path/to/your/image2.png)
+![DevPage Screenshot 3](path/to/your/image1.png)
+![DevPage Screenshot 4](path/to/your/image2.png)
+![DevPage Screenshot 5](path/to/your/image1.png)
+
+
 ## Features
 - **Animated Welcome Screen:** A welcome screen that disappears after the animation completes.
 - **Smooth Page Transitions:** Animated page transitions using `Framer Motion`.
