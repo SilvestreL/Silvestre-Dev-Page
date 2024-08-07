@@ -56,6 +56,10 @@ silvestre-dev-page/
 ## How to Run the Project
 To run the project locally, follow these steps:
 
+## Inspiration
+This project was inspired by the UX design of [Damian Watracz](https://www.linkedin.com/in/damianwatracz/).
+
+
 1. **Clone the repository:**
     ```sh
     git clone https://github.com/your-username/devpage.git
